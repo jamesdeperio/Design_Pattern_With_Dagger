@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "io.github.jamesdeperio.architecture"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    /* TESTING */
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /* KOTLIN */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+
+    /* BASE CLASS */
+    implementation 'com.github.jamesdeperio:PocketLib:2.2.0'
+    implementation 'me.yokeyword:swipebackfragment:0.4.0'
+
+    /* ANIMATION */
+    implementation 'com.airbnb.android:lottie:2.7.0' // 2.8.x is for androidX
+
+    /* IMAGE PROCESSOR */
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
+    kapt 'com.github.bumptech.glide:compiler:4.8.0'
+
+    /* DAGGER INJECTION  FRAMEWORK */
+    ext.dagger_version = '2.19'
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+
+    /* ANDROID SUPPORT LIBRARIES */
+    ext.android_support_version = '28.0.0'
+    ext.android_support_constraint_version = '1.1.3'
+    ext.android_support_multidex_version = '1.0.3'
+    implementation "com.android.support:appcompat-v7:$android_support_version"
+    implementation "com.android.support:design:$android_support_version"
+    implementation "com.android.support:recyclerview-v7:$android_support_version"
+    implementation "com.android.support:support-annotations:$android_support_version"
+    implementation "com.android.support:cardview-v7:$android_support_version"
+    implementation "com.android.support.constraint:constraint-layout:$android_support_constraint_version"
+    implementation "com.android.support:multidex:$android_support_multidex_version"
+
+
+    /*REACTIVE FRAMEWORK*/
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.4"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
+
+    /*RETROFIT*/
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    /*NETWORK RESPONSE CONVERTER FACTORY */
+    //for multiple converter factory and retrofit base class
+    implementation 'com.github.jamesdeperio:RetrofitKit:v1.0.5'
+    //for json converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //for xml converter
+    implementation 'com.tickaroo.tikxml:annotation:0.8.13'
+    implementation 'com.tickaroo.tikxml:core:0.8.13'
+    kapt 'com.tickaroo.tikxml:processor:0.8.13'
+    implementation 'com.tickaroo.tikxml:retrofit-converter:0.8.13'
+
+}
+
+kapt {
+    correctErrorTypes = true
+    generateStubs = true
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
