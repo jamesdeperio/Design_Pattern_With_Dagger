@@ -20,7 +20,7 @@ TASKS TYPE
 5. ***LOGIC IMPLEMENTATION*** class which implements ***PRESENTER***, is in charge in *processing of data* came from network request or dao, then it notify the changes in COMPONENT’s properties using the ***VIEW METHOD*** as the middleware.
 
 ## CLASSES PER APP MODULE
-* ***CONTRACT*** interface (Event, ViewMethod, Presenter, State
+* ***CONTRACT*** interface (Event, ViewMethod, Presenter, State)
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - abstraction pattern (holds the middleware methods and callbacks.) 
 * ***CONTROLLER*** implements ***EVENT***
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - templated pattern (just like writing a suedo code)
