@@ -13,6 +13,6 @@ class LoginEval : HasLoginContract.State {
     override fun isCredentialEmpty(username: String, password: String): Boolean
         = username.isEmpty() && password.isEmpty()
 
-    override fun isLoginRequestHasError(response: LoginRequest): Boolean
+    override fun isLoginRequestError(response: LoginRequest): Boolean
         = response.errorMessage != null
 }

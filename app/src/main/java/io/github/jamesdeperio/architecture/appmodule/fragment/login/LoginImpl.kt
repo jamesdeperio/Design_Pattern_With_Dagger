@@ -20,7 +20,7 @@ class LoginImpl(
             .observeOn(Schedulers.newThread())
             .doOnNext { loginRequest ->
                 viewMethod.updateResponse(response=loginRequest)
-                if (state.isLoginRequestHasError(response= loginRequest))
+                if (state.isLoginRequestError(response= loginRequest))
                     viewMethod.showErrorDialog(error = "Invalid Credentials.")
             }
             .subscribeCatchNetworkError { viewMethod.showErrorDialog(error = "Something went wrong to web service.") }

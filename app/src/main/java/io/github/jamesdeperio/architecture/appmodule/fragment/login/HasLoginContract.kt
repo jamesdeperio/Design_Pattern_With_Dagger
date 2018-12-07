@@ -39,6 +39,6 @@ interface HasLoginContract {
      */
     interface State {
         fun isCredentialEmpty(username: String, password: String): Boolean
-         fun isLoginRequestHasError(response: LoginRequest):Boolean
+         fun isLoginRequestError(response: LoginRequest):Boolean
     }
 }
