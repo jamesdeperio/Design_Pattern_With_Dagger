@@ -7,7 +7,7 @@ package io.github.jamesdeperio.architecture.appmodule.activity.main
 import io.github.jamesdeperio.architecture.global.util.Constant
 
 /*
-    interpreter evaluation
+    interpreter's evaluation
  */
 class MainEval : HasMainContract.State {
     override fun isInternetPermitted(requestCode: Int): Boolean
