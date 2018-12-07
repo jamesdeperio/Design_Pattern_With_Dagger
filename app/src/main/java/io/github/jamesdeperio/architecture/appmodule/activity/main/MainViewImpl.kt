@@ -15,11 +15,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 /*
- *   ViewImplementation (middleware/bridge for view) is the only class that can access and manipulate the assigned view.
+ *   ViewImplementation (middleware/bridge for component) is the only class that can access and manipulate the assigned component.
  */
 class MainViewImpl(
         private val context: Context,
-        private val view: MainView,
+        private val component: MainComponent,
         private val fragmentManager: FragmentManager
 ) : HasMainContract.ViewMethod {
   /*

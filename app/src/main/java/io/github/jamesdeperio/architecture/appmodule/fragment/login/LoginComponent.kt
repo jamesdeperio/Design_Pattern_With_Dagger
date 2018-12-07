@@ -16,7 +16,7 @@ import io.github.jamesdeperio.architecture.global.base.BaseView
 /*
  * View is in charge in creating component and providing action to it.
  */
-class LoginView(
+class LoginComponent(
         view: View,
         event: HasLoginContract.Event,
         context: Context):BaseView(context=context) {

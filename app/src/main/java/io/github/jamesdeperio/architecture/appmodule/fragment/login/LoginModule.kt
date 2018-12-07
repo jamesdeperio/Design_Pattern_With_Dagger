@@ -37,9 +37,9 @@ object LoginModule {
     @FragmentScope
     @Provides
     @JvmStatic
-    fun provideComponent(controller: LoginController): LoginView {
+    fun provideComponent(controller: LoginController): LoginComponent {
         controller.rootView = controller.layoutInflater.inflate(R.layout.fragment_login, controller.container, false)
-        return LoginView(
+        return LoginComponent(
                 view = controller.rootView!!,
                 event = controller as HasLoginContract.Event,
                 context = controller.context!!
@@ -47,15 +47,15 @@ object LoginModule {
     }
 
     /*
-  *  provide a viewMethod for LoginController to access the view.
-  *  Since MainController is bind and LoginView is provided to this module, we can now use it as parameter.
+  *  provide a viewMethod for LoginController to access the component.
+  *  Since MainController is bind and LoginComponent is provided to this module, we can now use it as parameter.
   */
     @FragmentScope
     @Provides
     @JvmStatic
-    fun provideViewMethod(controller: LoginController, view: LoginView): HasLoginContract.ViewMethod = LoginViewImpl(
+    fun provideViewMethod(controller: LoginController, component: LoginComponent): HasLoginContract.ViewMethod = LoginViewImpl(
             fragment = controller as Fragment,
-            view = view
+            component = component
     )
 
     /*

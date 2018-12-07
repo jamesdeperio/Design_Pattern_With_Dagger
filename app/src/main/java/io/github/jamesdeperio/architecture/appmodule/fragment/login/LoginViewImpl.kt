@@ -13,11 +13,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 /*
- *   ViewImplementation (middleware/bridge for view) is the only class that can access and manipulate the assigned view.
+ *   ViewImplementation (middleware/bridge for component) is the only class that can access and manipulate the assigned component.
  */
 class LoginViewImpl(
         private val fragment: Fragment,
-        private val view: LoginView
+        private val component: LoginComponent
 ) : HasLoginContract.ViewMethod {
     /*
    * All method should run on UI Thread.
@@ -25,11 +25,11 @@ class LoginViewImpl(
 
     @SuppressLint("SetTextI18n")
     override fun updateResponse(response: LoginRequest): Job = GlobalScope.launch(Dispatchers.Main) {
-        view.tvResponse.text ="Response:\n$response"
+        component.tvResponse.text ="Response:\n$response"
     }
 
     override fun showErrorDialog(error: String): Job = GlobalScope.launch(Dispatchers.Main) {
-        view.errorDialog.description.text=error
-        view.errorDialog.show()
+        component.errorDialog.description.text=error
+        component.errorDialog.show()
     }
 }

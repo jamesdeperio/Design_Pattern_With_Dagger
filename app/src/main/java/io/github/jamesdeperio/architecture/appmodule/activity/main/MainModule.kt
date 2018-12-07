@@ -41,10 +41,10 @@ object MainModule {
     @ActivityScope
     @Provides
     @JvmStatic
-    fun provideComponent(controller: MainController): MainView {
+    fun provideComponent(controller: MainController): MainComponent {
         val view = controller.layoutInflater.inflate(R.layout.activity_main, null)
         controller.setContentView(view)
-        return MainView(
+        return MainComponent(
                 view = view,
                 event = controller as HasMainContract.Event,
                 context = controller as Context
@@ -52,15 +52,15 @@ object MainModule {
     }
 
     /*
-     *  provide a viewMethod for MainController to access the view.
-     *  Since MainController is bind and MainView is provided to this module, we can now use it as parameter.
+     *  provide a viewMethod for MainController to access the component.
+     *  Since MainController is bind and MainComponent is provided to this module, we can now use it as parameter.
      */
     @ActivityScope
     @Provides
     @JvmStatic
-    fun provideViewMethod(controller: MainController, view: MainView): HasMainContract.ViewMethod = MainViewImpl(
+    fun provideViewMethod(controller: MainController, component: MainComponent): HasMainContract.ViewMethod = MainViewImpl(
             context = controller as Context,
-            view = view,
+            component = component,
             fragmentManager = controller.supportFragmentManager!!
     )
 

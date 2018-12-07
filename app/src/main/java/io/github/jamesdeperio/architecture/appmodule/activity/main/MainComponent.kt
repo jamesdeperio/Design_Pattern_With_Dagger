@@ -10,7 +10,7 @@ import android.view.View
 /*
  * View is in charge in creating component and providing action to it.
  */
-class MainView(
+class MainComponent(
         view: View,
         event: HasMainContract.Event,
         context: Context) {
