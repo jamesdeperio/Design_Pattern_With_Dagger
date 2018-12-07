@@ -1,5 +1,5 @@
 # MVP ARCHITECTURE WITH DEPENDENCY INJECTION
-![alt text](https://github.com/jamesdeperio/MVP_Architecture_With_Dependency_Injection/blob/master/mvp.png "mvp")
+![alt text](https://github.com/jamesdeperio/MVP_Architecture_With_Dependency_Injection/blob/master/mvp_.png "mvp")
 * ***BLACK ARROW*** - run on Dispatcher.Main
 * ***GREY ARROW*** - subscribe on Dispatcher.IO
 * ***BLUE ARROW*** - observe on Dispatcher.NewThread
