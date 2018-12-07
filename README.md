@@ -1,4 +1,5 @@
 # MVP ARCHITECTURE WITH DEPENDENCY INJECTION
+![alt text](https://github.com/jamesdeperio/Design_Pattern_With_Dagger/mvp.png")
 
 * ***BLACK ARROW*** - run on Dispatcher.Main
 * ***GREY ARROW*** - subscribe on Dispatcher.IO
