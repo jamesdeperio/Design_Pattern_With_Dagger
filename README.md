@@ -44,3 +44,18 @@ TASKS TYPE
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - all method are executed on UI thread
 * ***MODULE***
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - dependency injection pattern (provide all class that needs to be coupled)
+
+_________________________________________________
+### DEPENDENCIES
+* org.jetbrains.kotlin
+* com.github.jamesdeperio:PocketLib
+* me.yokeyword:swipebackfragment
+* com.airbnb.android:lottie
+* com.github.bumptech.glide
+* com.google.dagger
+* com.android.support
+* io.reactivex.rxjava2
+* com.squareup.retrofit2
+* com.github.jamesdeperio:RetrofitKit
+* com.google.code.gson
+* com.tickaroo.tikxml
