@@ -24,7 +24,7 @@ class LoginImpl(
                     viewMethod.showErrorDialog(error = "Invalid Credentials.")
             }
             .subscribeCatchNetworkError { viewMethod.showErrorDialog(error = "Something went wrong to web service.") }
-            // doOnError does not catch all of network error
+            // doOnError does not catch all network error
             // ReactiveExtensions.subscribeCatchNetworkError is an extension method from Observable
 
 }

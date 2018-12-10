@@ -8,7 +8,7 @@ import io.reactivex.internal.functions.Functions
 
 
 /*
- * doOnError does not catch all of network error
+ * doOnError does not catch all network error
  * ReactiveExtensions.subscribeCatchNetworkError is an extension method from Observable
  */
 @SchedulerSupport(SchedulerSupport.NONE)
