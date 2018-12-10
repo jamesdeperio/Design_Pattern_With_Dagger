@@ -13,6 +13,4 @@ import android.view.View
 class MainComponent(
         view: View,
         event: HasMainContract.Event,
-        context: Context) {
-
-}
+        context: Context)

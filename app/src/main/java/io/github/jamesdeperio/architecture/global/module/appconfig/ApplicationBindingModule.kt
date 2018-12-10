@@ -24,7 +24,7 @@ abstract class ApplicationBindingModule {
     companion object Provider {
         /*
             Provide global module here. (dao,manager, etc..)
-            All class that are provided here, can be use in any Sub-Modules.
+            All provided class can be use in any Sub-Modules.
             Also, class can be injected to (Activity,Fragment) Controller and Services/BroadcastReceiver
          */
         @ApplicationScope

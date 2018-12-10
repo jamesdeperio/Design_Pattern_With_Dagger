@@ -9,9 +9,7 @@ package io.github.jamesdeperio.architecture.appmodule.activity.main
 *  Also, to communicate with repositories/dao and other module attached to it.
 * */
 class MainImpl(
-        private val viewMethod: HasMainContract.ViewMethod) : HasMainContract.Presenter {
-
+        private val viewMethod: HasMainContract.ViewMethod) : HasMainContract.Presenter
     /*
     * Methods are usually DISPOSABLE and running on Background Thread
     */
-}
