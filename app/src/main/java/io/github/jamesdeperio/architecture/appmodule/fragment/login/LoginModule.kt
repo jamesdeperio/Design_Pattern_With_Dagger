@@ -11,6 +11,7 @@ import io.github.jamesdeperio.architecture.R
 import io.github.jamesdeperio.architecture.global.scope.FragmentScope
 import io.github.jamesdeperio.architecture.integration.network.NetworkManager
 import io.reactivex.disposables.CompositeDisposable
+import jdp.pocketlib.util.UserPrefManager
 
 @Module
 object LoginModule {
@@ -60,15 +61,17 @@ object LoginModule {
 
     /*
    *  provide a presenter for LoginController to do the action and process.
-   *  Since HasLoginContract.ViewMethod  is provided to this module, we can now use it as parameter.
+   *  Since HasLoginContract.ViewMethod and HasLoginContract.State are  provided to this module, we can now use it as parameter.
+   *  Since UserPrefManagerr and NetworkManager are  already provided in global module, we can now use it as parameter
    */
     @FragmentScope
     @Provides
     @JvmStatic
-    fun providePresenter(viewMethod: HasLoginContract.ViewMethod, networkManager: NetworkManager, state:HasLoginContract.State): HasLoginContract.Presenter = LoginImpl(
+    fun providePresenter(viewMethod: HasLoginContract.ViewMethod, networkManager: NetworkManager, state:HasLoginContract.State, userPrefManager: UserPrefManager): HasLoginContract.Presenter = LoginImpl(
             viewMethod = viewMethod,
             state= state,
-            restRepository = networkManager.restRepository
+            restRepository = networkManager.restRepository,
+            userPrefManager = userPrefManager
     )
 
 

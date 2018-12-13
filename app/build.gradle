@@ -40,8 +40,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 
     /* BASE CLASS */
-    implementation 'com.github.jamesdeperio:PocketLib:956a7eaa14'
+    implementation 'com.github.jamesdeperio:PocketLib:0d17e9df93'
     implementation 'me.yokeyword:swipebackfragment:0.4.0'
+
 
     /* ANIMATION */
     implementation 'com.airbnb.android:lottie:2.7.0' // 2.8.x is for androidX
@@ -81,6 +82,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    /* GSON */
+    implementation 'com.google.code.gson:gson:2.8.5'
 
     /*NETWORK RESPONSE CONVERTER FACTORY */
     //for multiple converter factory and retrofit base class

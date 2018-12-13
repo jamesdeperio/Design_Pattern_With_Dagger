@@ -12,6 +12,7 @@ import dagger.Provides
 import io.github.jamesdeperio.architecture.global.scope.ApplicationScope
 import io.github.jamesdeperio.architecture.integration.network.NetworkManager
 import jdp.pocketlib.util.EventBusManager
+import jdp.pocketlib.util.UserPrefManager
 
 @Module
 abstract class ApplicationBindingModule {
@@ -37,6 +38,13 @@ abstract class ApplicationBindingModule {
         @JvmStatic
         fun provideNetworkManager(context: Context): NetworkManager
                 = NetworkManager(context = context) // manager for network request
+        // context is available to use as a parameter since we bind it above.
+
+        @ApplicationScope
+        @Provides
+        @JvmStatic
+        fun provideUserPrefManager(context: Context): UserPrefManager
+                = UserPrefManager(context = context) // manager for temp storage
         // context is available to use as a parameter since we bind it above.
     }
 }
