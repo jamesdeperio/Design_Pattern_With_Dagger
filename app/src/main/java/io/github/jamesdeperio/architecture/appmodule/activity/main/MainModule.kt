@@ -28,7 +28,7 @@ object MainModule {
     /*
      *  provide a evaluation class to identify the state
      */
-    @FragmentScope
+    @ActivityScope
     @Provides
     @JvmStatic
     fun provideState(): HasMainContract.State = MainEval()
