@@ -12,7 +12,7 @@ import io.github.jamesdeperio.architecture.global.app.MainExceptionHandler
 import io.github.jamesdeperio.architecture.global.base.DIBaseActivity
 import io.github.jamesdeperio.architecture.global.util.Constant
 import io.reactivex.disposables.CompositeDisposable
-import jdp.pocketlib.util.EventPublisher
+import jdp.pocketlib.util.EventBusManager
 import javax.inject.Inject
 
 /*
@@ -24,7 +24,7 @@ class MainController : DIBaseActivity(), HasMainContract.Event {
     @field:[Inject] internal lateinit var viewMethod: HasMainContract.ViewMethod
     @field:[Inject] internal lateinit var state:HasMainContract.State
     @field:[Inject] internal lateinit var subscription: CompositeDisposable
-    @field:[Inject] internal lateinit var eventPublisher: EventPublisher //this class is from global module
+    @field:[Inject] internal lateinit var eventBusManager: EventBusManager //this class is from global module
 
     /*
     * First method to be called.
@@ -51,8 +51,7 @@ class MainController : DIBaseActivity(), HasMainContract.Event {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (state.isInternetPermitted(requestCode)) {
             // Do something
-            // send action to fragment using event manager (Event Publisher)
-            // eventPublisher.sendEvent(CHANNEL,ACTION(value))
+            // send action to fragment using event manager
         }
     }
 

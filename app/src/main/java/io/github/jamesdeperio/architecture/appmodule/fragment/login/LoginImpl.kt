@@ -21,9 +21,13 @@ class LoginImpl(
             .doOnNext { loginRequest ->
                 viewMethod.updateResponse(response=loginRequest)
                 if (state.isLoginRequestError(response= loginRequest))
-                    viewMethod.showErrorDialog(error = "Invalid Credentials.")
+                    viewMethod.showErrorDialog(error = "Custom error code from webservice.")
+                else viewMethod.showSuccessDialog(message="Login succeed.")
             }
-            .subscribeCatchNetworkError { viewMethod.showErrorDialog(error = "Something went wrong to web service.") }
+            .subscribeCatchNetworkError {
+                it.printStackTrace()
+                //if status code is not ok and accepted
+                viewMethod.showErrorDialog(error = "Something went wrong to web service.") }
             // doOnError does not catch all network error
             // ReactiveExtensions.subscribeCatchNetworkError is an extension method from Observable
 

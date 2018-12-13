@@ -11,8 +11,7 @@ import dagger.Module
 import dagger.Provides
 import io.github.jamesdeperio.architecture.global.scope.ApplicationScope
 import io.github.jamesdeperio.architecture.integration.network.NetworkManager
-import jdp.pocketlib.util.Bus
-import jdp.pocketlib.util.EventPublisher
+import jdp.pocketlib.util.EventBusManager
 
 @Module
 abstract class ApplicationBindingModule {
@@ -30,8 +29,8 @@ abstract class ApplicationBindingModule {
         @ApplicationScope
         @Provides
         @JvmStatic
-        fun provideEventBus():EventPublisher
-                = EventPublisher(Bus.PublishSubject) // manager for event bus (usually used in passing of data from not coupled classes like Activity-Fragment-Service-BroadcastReceiver)
+        fun provideEventBus():EventBusManager
+                = EventBusManager() // manager for event bus (usually used in passing of data from not coupled classes like Activity-Fragment-Service-BroadcastReceiver)
 
         @ApplicationScope
         @Provides

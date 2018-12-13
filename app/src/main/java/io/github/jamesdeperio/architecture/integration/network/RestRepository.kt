@@ -18,7 +18,7 @@ interface RestRepository {
     ):Observable<LoginRequest>
 
     //@POST()
-    @GET("5c0799103000006217d25b8f")  //mocky.io failed response //i've used GET just for testing
+    @GET("5c11ad1b3300005300998bac")  //mocky.io failed response //i've used GET just for testing
     @JSONFormat
     fun loginRequestError(
             //@Field("username")

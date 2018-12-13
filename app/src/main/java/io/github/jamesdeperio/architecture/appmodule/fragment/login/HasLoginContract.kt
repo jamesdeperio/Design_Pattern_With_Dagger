@@ -25,6 +25,7 @@ interface HasLoginContract {
     interface ViewMethod {
         fun showErrorDialog(error: String):Job
         fun updateResponse(response: LoginRequest):Job
+        fun showSuccessDialog(message: String):Job
     }
 
     /*

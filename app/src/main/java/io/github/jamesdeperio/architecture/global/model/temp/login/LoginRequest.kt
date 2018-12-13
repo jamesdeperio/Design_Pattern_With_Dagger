@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class LoginRequest(
         @field:[SerializedName("content")]
-        var content: Content,
+        var content: Content?   ,
         @field:[SerializedName("error_code")]
         var errorCode: Int = 0,
         @field:[SerializedName("error_message")]

@@ -12,6 +12,6 @@ import io.reactivex.internal.functions.Functions
  * ReactiveExtensions.subscribeCatchNetworkError is an extension method from Observable
  */
 @SchedulerSupport(SchedulerSupport.NONE)
-fun <T> Observable<T>.subscribeCatchNetworkError(error: ()->Unit = {}): Disposable {
-    return subscribe(Functions.emptyConsumer<Any>(), Consumer {  error() }, Functions.EMPTY_ACTION, Functions.emptyConsumer<Any>())
+fun <T> Observable<T>.subscribeCatchNetworkError(error: (error:Throwable)->Unit = {}): Disposable {
+    return subscribe(Functions.emptyConsumer<Any>(), Consumer {  error(it) }, Functions.EMPTY_ACTION, Functions.emptyConsumer<Any>())
 }

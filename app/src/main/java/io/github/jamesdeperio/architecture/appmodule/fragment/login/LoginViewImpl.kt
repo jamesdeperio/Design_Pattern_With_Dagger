@@ -32,4 +32,9 @@ class LoginViewImpl(
         component.errorDialog.description.text=error
         component.errorDialog.show()
     }
+
+    override fun showSuccessDialog(message: String): Job = GlobalScope.launch(Dispatchers.Main) {
+        component.successDialog.description.text=message
+        component.successDialog.show()
+    }
 }

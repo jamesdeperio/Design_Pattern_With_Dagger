@@ -10,7 +10,6 @@ import dagger.Module
 import dagger.Provides
 import io.github.jamesdeperio.architecture.R
 import io.github.jamesdeperio.architecture.global.scope.ActivityScope
-import io.github.jamesdeperio.architecture.global.scope.FragmentScope
 import io.reactivex.disposables.CompositeDisposable
 
 @Module
@@ -28,7 +27,7 @@ object MainModule {
     /*
      *  provide a evaluation class to identify the state
      */
-    @FragmentScope
+    @ActivityScope
     @Provides
     @JvmStatic
     fun provideState(): HasMainContract.State = MainEval()
