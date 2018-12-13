@@ -29,12 +29,8 @@ class LoginImpl(
                         viewMethod.showErrorDialog(error = "Custom error code from webservice.")
                     }
                     else -> {
-                       try {
-                           userPrefManager.set<LoginRequest>(key = Constant.LOGIN_CREDENTIAL_KEY,value = loginRequest)            //save temp data
-                           viewMethod.updateResponse(response = userPrefManager.get<LoginRequest>(Constant.LOGIN_CREDENTIAL_KEY))            //load temp data
-                       }catch (e:Exception){
-                           e.printStackTrace()
-                       }
+                        userPrefManager.set<LoginRequest>(key = Constant.LOGIN_CREDENTIAL_KEY,value = loginRequest)            //save temp data
+                        viewMethod.updateResponse(response = userPrefManager.get<LoginRequest>(Constant.LOGIN_CREDENTIAL_KEY))            //load temp data
                         viewMethod.showSuccessDialog(message="Login succeed.")
                     }
                 }
