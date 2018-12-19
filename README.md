@@ -7,7 +7,6 @@
 [![GitHub watchers](https://img.shields.io/github/watchers/jamesdeperio/MVP_Architecture_With_Dependency_Injection.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/jamesdeperio/MVP_Architecture_With_Dependency_Injection/watchers/)
 [![GitHub followers](https://img.shields.io/github/followers/jamesdeperio.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/jamesdeperio?tab=followers)
 [![HitCount](http://hits.dwyl.io/jamesdeperio/MVP_Architecture_With_Dependency_Injection.svg)](http://hits.dwyl.io/jamesdeperio/MVP_Architecture_With_Dependency_Injection)
-[![Jitpack downloads](https://jitpack.io/v/jamesdeperio/MVP_Architecture_With_Dependency_Injection/month.svg)](https://jitpack.io/#jamesdeperio/MVP_Architecture_With_Dependency_Injection)
 
 ![alt text](https://github.com/jamesdeperio/MVP_Architecture_With_Dependency_Injection/blob/master/mvp_.png "mvp")
 * ***BLACK ARROW*** - run on Dispatcher.Main
