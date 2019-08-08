@@ -40,7 +40,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 
     /* BASE CLASS */
-    implementation 'com.github.jamesdeperio:PocketLib:0d17e9df93'
+    implementation 'com.github.jamesdeperio:PocketLib:3.1.1'
     implementation 'me.yokeyword:swipebackfragment:0.4.0'
 
 
